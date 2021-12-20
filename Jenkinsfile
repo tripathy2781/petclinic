@@ -15,7 +15,7 @@ pipeline {
         stage('Check upstream job status'){
             steps{
                 script{
-                    def upstreamjob = buildjob: 'cloudfreak', propagate: false
+                    def upstreamjob = buildjob: 'tripathy2781/cloudfreak', propagate: false
                     if(upstreamjob != "SUCCESS"){
                         echo "upstream job status: ${upstreamjob.result}"
                         sh "exit 1"
